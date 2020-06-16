@@ -1,0 +1,16 @@
+<br />
+<div class="container" *ngIf="aboutPageData">
+    <div class="row">
+        <div class="card col-sm">
+            <div class="card-body">
+                <h4 class="card-title" contenteditable = "isAdmin">{{aboutPageData.pageTitle}}</h4>
+                <h5 class="card-title" contenteditable = "isAdmin">Version {{aboutPageData.version}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Technologies</h6>
+                <p class="card-text">
+                    <a *ngFor="let item of aboutPageData.technologies" [href]="item.url" target="_blank">#{{item.name}} </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<br />

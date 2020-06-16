@@ -1,0 +1,30 @@
+// 404
+
+.four-oh-four {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 15%;
+}
+
+
+// ---- XSM - 576px and up
+@media (min-width: $screen-xsm-custom-min) {
+
+}
+
+// ---- SM - 768px and up ----
+@media (min-width: $screen-sm-custom-min) {
+
+}
+
+// ---- MD - 992px and up  ----
+@media (min-width: $screen-md-custom-min) {
+
+}
+
+// ---- LG - 1200px and up ----
+@media (min-width: $screen-lg-custom-min) {
+
+}

@@ -1,0 +1,18 @@
+/*
+Theme Name: Filter Theme
+Author: Filter Digital
+Author URI: http://filter-digital.com
+Description: The main site theme
+Version: 1
+*/
+
+// Site Variables
+@import "variables";
+
+// Site Styles
+@import "base";
+@import "layout";
+@import "forms";
+@import "content";
+@import "404";
+@import "print";
