@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  AZURE_STORAGE_ACCOUNT: "ashokprofile",
+  AZURE_STORAGE_ACCESS_KEY: "IskcSUx/s5Pt7SMAsQRebFMCVCg+ZBV7MfMSba3fhafzl9GKnNM5c8ei7LIQXTVnyUGONGjXyHWXGsNCbptEQQ==",
+  AZURE_STORAGE_CONNECTION_STRING: "DefaultEndpointsProtocol=https;AccountName=ashokprofile;AccountKey=IskcSUx/s5Pt7SMAsQRebFMCVCg+ZBV7MfMSba3fhafzl9GKnNM5c8ei7LIQXTVnyUGONGjXyHWXGsNCbptEQQ==;EndpointSuffix=core.windows.net",
+  azureContainers:{
+    baseUrl:'blob.core.windows.net',
+    blobName:'ashokprofile'
+  }
 };
 
 /*

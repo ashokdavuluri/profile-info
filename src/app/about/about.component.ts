@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import aboutData from './soures/about.json';
-import { AboutModel } from './soures/about-model';
+import { AboutModel } from '../domain/models/about-model';
+import { DataSourseService } from '../domain/services/data-sourse.service';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -9,11 +9,19 @@ import { AboutModel } from './soures/about-model';
 export class AboutComponent implements OnInit {
   aboutPageData: AboutModel;
   isAdmin = true;
-  constructor() { }
+  DataSourseService: DataSourseService;
+  constructor(dataSourseService: DataSourseService) {
+    this.DataSourseService = dataSourseService;
+   }
 
   ngOnInit(): void {
-     this.aboutPageData = JSON.parse(JSON.stringify(aboutData));
+    this.DataSourseService.getAboutPageData().then(data => {
+      this.aboutPageData = data;
+      console.log(data);
+    })
+     //this.aboutPageData = JSON.parse(JSON.stringify(aboutData));
      this.isAdmin = localStorage.getItem("isAdmin")?true:false;
+     
   }
 
 }
