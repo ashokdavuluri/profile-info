@@ -1,10 +1,7 @@
+import { TechTag } from './common-model';
+
 export interface AboutModel {
     pageTitle: string;
     version:string;
-    technologies:Technology[];
-}
-
-export interface Technology{
-    name: string;
-    url:string;
+    technologies:TechTag[];
 }

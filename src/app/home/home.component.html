@@ -1,50 +1,22 @@
 <section class="fullwidth py-5">
     <div class="container">
         <img [src]="imagePath" alt="Avatar" style="width:200px;  border-radius: 50%;">
-        <h1 class="color-brand pb-2">Ashok Davuluri</h1>
-        <p class="text-large">Seeking opportunities as a full-stack Dot Net developer. Having 7+ years of experience
-            wanted To be in an organization that gives an ambitious and career growth, where acquired skills, Knowledge,
-            attitude, and research will be utilized towards continuous success to organization and to myself</p>
+        <h1 class="color-brand pb-2">{{profileData?.profileName}}</h1>
+        <p class="text-large">{{profileData?.summary}}</p>
     </div>
-    
     <div style="margin:25px;">
         <div class="row">
-            <div class="card col-md">
+            <div class="card col-md" *ngFor="let item of profileData?.frameworks">
                 <div class="card-body">
-                    <h5 class="card-title">C#</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Back End</h6>
-                    <p class="card-text">Confident enough to work on Microsoft technologies and others. Mainly working on Dot Net frameworks.
-                        Trained and worked on Python.
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{item.subTitle}}</h6>
+                    <p class="card-text">{{item.description}}</p>
+                        <p class="card-text-tags">
+                            <a *ngFor="let tag of item.techTags" href="https://www.google.com/search?q={{tag.url}}" target="_blank">#{{tag.name}}, </a>
                         </p>
-                        <p class="card-text-tags">#C#, #DotNet, #MVC, #DotNetCore, #API, #ServiceFabric, #EntityFrameWork, #EntityFrameWorkCode, #SignalR, #DDD, #ServiceBusArchitecture, #RabitMq, #MassTransit, </p>
                 </div>
             </div>
-            <div class="card col-md">
-                <div class="card-body">
-                    <h5 class="card-title">UI</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Front End</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <p>Tags: #Angular, #Razor</p>
-                </div>
             </div>
-            <div class="card col-md">
-                <div class="card-body">
-                    <h5 class="card-title">DB</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">#</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div>
-            <div class="card col-md">
-                <div class="card-body">
-                    <h5 class="card-title">Cloud</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Azure</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div>
-        </div>
     </div>
     <br/>
     <div class="container">

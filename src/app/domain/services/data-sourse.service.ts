@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {environment} from '../../../environments/environment'
 import { AboutModel } from '../models/about-model';
+import { ProfileModel } from '../models/profile-model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,21 +13,29 @@ export class DataSourseService {
     this.blobContainerUrl = "https://"+environment.azureContainers.blobName+'.'+environment.azureContainers.baseUrl
   }
 
+  getProfilePageData():Promise<ProfileModel>{
+    return new Promise(resolve => {
+      var file = "https://ashokprofile.blob.core.windows.net/content-store/profile.json";
+     this.downloadFile(file, resolve);
+    })
+  }
   getAboutPageData(): Promise<AboutModel>{
     return new Promise(resolve => {
       var file = "https://ashokprofile.blob.core.windows.net/content-store/about.json";
-     console.log(file)
-     var rawFile = new XMLHttpRequest();
-     rawFile.open("GET",file,false);
-     rawFile.onreadystatechange = function() {
-         if(rawFile.readyState === 4) {
-             if(rawFile.status === 200 || rawFile.status === 0)
-             {
-              resolve(JSON.parse(rawFile.responseText));
-             }
-         }
-     }
-     rawFile.send(null);
+     this.downloadFile(file, resolve);
     })
+  }
+
+  private downloadFile(file: string, resolve: (value?: any | PromiseLike<any>) => void) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function () {
+      if (rawFile.readyState === 4) {
+        if (rawFile.status === 200 || rawFile.status === 0) {
+          resolve(JSON.parse(rawFile.responseText));
+        }
+      }
+    };
+    rawFile.send(null);
   }
 }

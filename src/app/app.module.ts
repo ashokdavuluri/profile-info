@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin/admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     CvComponent,
     ContactComponent,
-    AdminComponent
+    AdminComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
