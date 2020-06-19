@@ -1,4 +1,24 @@
 <section class="fullwidth py-5">
+    <div class="container">
+        <div class="alert alert-success" *ngIf="isSuccess" role="alert">
+           Thanks for your subscription, will get back you soon...!
+          </div>
+        <h3 class="color-brand pb-2">Most awesome content is coming soon....</h3>
+        <div class="mb-3">
+            <input type="email" class="form-control" [(ngModel)]="emailId" placeholder="Enter your email, will let you know when we ready!" aria-label="Email" aria-describedby="button-addon2">
+            <span class="text-danger" *ngIf="!IsValidEmail">Please provide a valid email.</span>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" (click)="onSubscribe()" type="button" id="button-addon2">Subscribe</button>
+            </div>
+          </div>
+    </div>
+    <!-- <div *ngIf="isAdmin" class="container">
+        <button class="btn" (click)="getAllEmailsList()" type="button" id="button-addon2">Get Emails</button>
+        <p class="card-text">
+            <a *ngFor="let email of emailList" href="mailto:{{email}}"target="_blank">{{email}} </a>
+        </p>
+    </div> -->
+<br/>
 <div class="">
     <div class="row">
         <div class="col-md-3">
