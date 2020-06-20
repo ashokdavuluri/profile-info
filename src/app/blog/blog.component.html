@@ -8,7 +8,7 @@
             <input type="email" class="form-control" [(ngModel)]="emailId" placeholder="Enter your email, will let you know when we ready!" aria-label="Email" aria-describedby="button-addon2">
             <span class="text-danger" *ngIf="!IsValidEmail">Please provide a valid email.</span>
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" (click)="onSubscribe()" type="button" id="button-addon2">Subscribe</button>
+              <button class="btn btn-outline-secondary" (click)="onSubscribe()" type="submit" id="button-addon2">Subscribe</button>
             </div>
           </div>
     </div>

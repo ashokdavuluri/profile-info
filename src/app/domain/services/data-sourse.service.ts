@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {environment} from '../../../environments/environment'
 import { AboutModel } from '../models/about-model';
 import { ProfileModel } from '../models/profile-model';
+import { ContactModel } from '../models/contact-model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,12 @@ export class DataSourseService {
     this.blobContainerUrl = "https://"+environment.azureContainers.blobName+'.'+environment.azureContainers.baseUrl
   }
 
+  getContactPageData():Promise<ContactModel>{
+    return new Promise(resolve => {
+      var file = "https://ashokprofile.blob.core.windows.net/content-store/contacts.json";
+     this.downloadFile(file, resolve);
+    })
+  }
   getProfilePageData():Promise<ProfileModel>{
     return new Promise(resolve => {
       var file = "https://ashokprofile.blob.core.windows.net/content-store/profile.json";
