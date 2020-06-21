@@ -2,27 +2,29 @@
 <div class="container" *ngIf="contactPageData">
   <h1 class="color-brand pb-2">{{contactPageData?.title}}</h1>
 </div>
-<div style="margin:25px;">
+<div class="Container">
   <div class="row">
-      <div class="col-md-7">
+    <div class="col-md-1"></div>
+    <div class="card col-md">
+      <div class="card-body">
+        <h4 class="card-title">Scan for the contact details</h4>
+        <h6 class="card-subtitle mb-2 text-muted">you can add to your contacts</h6>
+        <p class="card-text">
+            <img src="../../assets/images/Ashok_Davuluri.png" alt="VCard" style="width:200px;">
+        </p>
+        <p>Or</p>
+        <p>
+          <a href="https://qrco.de/ashokdavuluri" target="_blank">Click here</a>
+        </p>
+    </div>
+    </div>
+      <div class="col-md">
         <form class="pb-2" *ngIf="contactPageData">
             <div class="form-group row" *ngFor="let item of contactPageData.contactTypes">
               <label  class="col-sm-2 col-form-label"><i class="fa fa-2x fa-{{item.icon}}"></i></label>
               <h2 class="col-sm-3 float-left col-form-label"><a [href]="item.url"><h4>{{item.displayNam}}</h4></a></h2>
             </div>  
           </form>
-      </div>
-      <div class="card col-md-4">
-        <div class="card-body">
-          <h4 class="card-title">Scan for the contact details</h4>
-          <h6 class="card-subtitle mb-2 text-muted">you can add to your contacts</h6>
-          <p class="card-text">
-              <img src="../../assets/images/Ashok_Davuluri.png" alt="VCard" style="width:200px;">
-          </p>
-          <p>Or</p>
-          <p>
-            <a href="https://qrco.de/ashokdavuluri" target="_blank">Click here</a>
-          </p>
-      </div>
-      </div>
+      </div> 
 </div>
+<br/>
