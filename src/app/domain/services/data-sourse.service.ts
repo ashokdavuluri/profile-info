@@ -3,6 +3,7 @@ import {environment} from '../../../environments/environment'
 import { AboutModel } from '../models/about-model';
 import { ProfileModel } from '../models/profile-model';
 import { ContactModel } from '../models/contact-model';
+import { ProjectModel } from '../models/projects-model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,13 @@ export class DataSourseService {
   getContactPageData():Promise<ContactModel>{
     return new Promise(resolve => {
       var file = "https://ashokprofile.blob.core.windows.net/content-store/contacts.json";
+     this.downloadFile(file, resolve);
+    })
+  }
+
+  getProjectsPageData():Promise<ProjectModel>{
+    return new Promise(resolve => {
+      var file = "https://ashokprofile.blob.core.windows.net/content-store/projects.json";
      this.downloadFile(file, resolve);
     })
   }

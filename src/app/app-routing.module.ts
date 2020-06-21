@@ -12,9 +12,9 @@ const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot([
-    {path: 'home', component: HomeComponent},
+    {path: 'profile', component: HomeComponent},
     {path: 'about', component: AboutComponent},
-    {path:'cv', component: CvComponent},
+    {path:'projects', component: CvComponent},
     {path:'contact', component: ContactComponent},
     {path:'admin', component: AdminComponent},
     {path:'blog', component: BlogComponent},

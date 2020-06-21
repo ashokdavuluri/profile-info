@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin/admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BlogComponent } from './blog/blog.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BlogComponent } from './blog/blog.component';
     CvComponent,
     ContactComponent,
     AdminComponent,
-    BlogComponent
+    BlogComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

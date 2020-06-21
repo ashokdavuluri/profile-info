@@ -10,11 +10,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/home">Profile <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/profile">Profile <span class="sr-only">(current)</span></a>
         </li>
        
         <li class="nav-item">
-          <a class="nav-link" href="/cv">Projects</a>
+          <a class="nav-link" href="/projects">Projects</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/blog">Blog</a>
@@ -42,31 +42,11 @@
             <i class="fa fa-3x fa-download" data-toggle="tooltip" data-placement="top" title="download cv"></i>
         </a>
     </div>
-        <div class="col" *ngFor="let item of contactPageData.contactTypes">
+        <div class="col" *ngFor="let item of contactPageData?.contactTypes">
             <a [href]="item.url" target="_blank">
                 <i class="fa fa-3x fa-{{item.icon}}" data-toggle="tooltip" data-placement="top" title="{{item.name}}"></i>
             </a>
         </div>
-        
-        <!-- <div class="col">
-            <a href="https://github.com/dashok93/" target="_blank">
-                <i class="fa fa-3x fa-github-square"></i>
-            </a>
-        </div>
-        <div class="col">
-            <a href="https://stackoverflow.com/users/7079607/ashok-davuluri" target="_blank">
-                <i class="fa fa-3x fa-stack-overflow"></i>
-            </a>
-        </div>
-        <div class="col">
-            <a href="#" target="_blank">
-                <i class="fa fa-3x fa-slack"></i>
-            </a>
-        </div>
-        <div class="col">
-            <a href="https://twitter.com/dashokbe" target="_blank">
-                <i class="fa fa-3x fa-twitter-square"></i>
-            </a>
-        </div> -->
     </div>
   </div>
+<br/>

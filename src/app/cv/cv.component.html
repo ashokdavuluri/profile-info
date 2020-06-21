@@ -1,6 +1,6 @@
-<section class="fullwidth py-5">
+<section class="fullwidth py-5" *ngIf="projectsData">
     <div class="container">
-        <h1 class="color-brand pb-2">Ashok Davuluri's CV</h1>
+        <h1 class="color-brand pb-2">{{projectsData?.title}}</h1>
         <div class="container">
             <div class="row">
                 <div class="col-sm">
@@ -10,82 +10,30 @@
                 </div>
             </div>
         </div>
-        <p class="text-large">Projects worked</p>
     </div>
     
     <br>
     <div class="container">
-<div class="card pb-2">
+        <div class="pb-2" *ngFor="let item of projectsData?.projects">
+  <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Project 1 - Sr. Software Engineer </h5>
-      <h6 class="card-subtitle mb-2 text-muted">Sep 2018 - Till Now</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. 
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      
-      <a href="#" class="card-link">Company</a>
-      <a href="#" class="card-link">Another link</a>
+      <h5 class="card-title">{{item.name}} - {{item.role}}{{item.isLatest?'(Latest)':''}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{item.dateFrom}} - {{item.dateTo}}</h6>
+      <p class="card-text" *ngFor="let summary of item.summaries">{{summary.data}}</p>
+      <!-- <br/> -->
+      <!-- <h5 class="float-left">Roles & Responsibilities</h5> -->
+      <!-- <ul class="float-left">
+          <li>point a</li>
+          <li>point b</li>
+          <li>point c</li>
+      </ul>
+      <a class="float-right" href="#" >See more</a> -->
+      <br/>
+      <p>
+        <a *ngFor="let tag of item.techTags" href="https://www.google.com/search?q={{tag.url}}" target="_blank">#{{tag.name}}, </a>
+      </p>
     </div>
-    <div class="card-footer text-muted">
-       Tech: .Net Core, Service bus, RabitMq, K8
-      </div>
   </div>
-  <div class="card pb-2">
-    <div class="card-body">
-      <h5 class="card-title">Project 1 - Sr. Software Engineer </h5>
-      <h6 class="card-subtitle mb-2 text-muted">Sep 2018 - Till Now</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. 
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      
-      <a href="#" class="card-link">Company</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-    <div class="card-footer text-muted">
-       Tech: .Net Core, Service bus, RabitMq, K8
-      </div>
-  </div>
-  <div class="card pb-2">
-    <div class="card-body">
-      <h5 class="card-title">Project 1 - Sr. Software Engineer </h5>
-      <h6 class="card-subtitle mb-2 text-muted">Sep 2018 - Till Now</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. 
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      
-      <a href="#" class="card-link">Company</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-    <div class="card-footer text-muted">
-       Tech: .Net Core, Service bus, RabitMq, K8
-      </div>
-  </div>
-  <div class="card pb-2">
-    <div class="card-body">
-      <h5 class="card-title">Project 1 - Sr. Software Engineer </h5>
-      <h6 class="card-subtitle mb-2 text-muted">Sep 2018 - Till Now</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. 
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      
-      <a href="#" class="card-link">Company</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-    <div class="card-footer text-muted">
-       Tech: .Net Core, Service bus, RabitMq, K8
-      </div>
-  </div>
+</div>
   </div>
 </section>
