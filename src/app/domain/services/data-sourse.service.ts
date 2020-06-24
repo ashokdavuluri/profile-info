@@ -12,7 +12,7 @@ export class DataSourseService {
   private blobContainerUrl: string;
   
   constructor() { 
-    this.blobContainerUrl = "https://"+environment.azureContainers.blobName+'.'+environment.azureContainers.baseUrl
+    // this.blobContainerUrl = "https://"+environment.azureContainers.blobName+'.'+environment.azureContainers.baseUrl
   }
 
   getContactPageData():Promise<ContactModel>{
