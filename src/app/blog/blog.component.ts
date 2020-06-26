@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VariableData } from '../domain/variable-data';
+import { DataSourseService } from '../domain/services/data-sourse.service';
 
 @Component({
   selector: 'app-blog',
@@ -13,7 +14,11 @@ export class BlogComponent implements OnInit {
   isSuccess: boolean;
   emailList: string[];
   isAdmin: any;
-  constructor() { }
+  dataSourseService: DataSourseService;
+
+  constructor(dataSourseService: DataSourseService) {
+    this.dataSourseService = dataSourseService;
+   }
 
   ngOnInit(): void {
     this.isAdmin = localStorage.getItem("isAdmin")?true:false;
@@ -22,6 +27,9 @@ export class BlogComponent implements OnInit {
   onSubscribe(){
     if(this.isValidMailFormat(this.emailId)){
       VariableData.addEmail(this.emailId);
+      this.dataSourseService.subscribeToBlog(this.emailId).subscribe(data => {
+        console.log(data);
+      });
       this.emailId = null;
       this.isSuccess = true;
     }
