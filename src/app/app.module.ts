@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BlogComponent } from './blog/blog.component';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { DownloadComponent } from './cv/download/download.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     ContactComponent,
     AdminComponent,
     BlogComponent,
-    SearchComponent
+    SearchComponent,
+    DownloadComponent
   ],
   imports: [
     BrowserModule,
