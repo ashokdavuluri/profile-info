@@ -11,6 +11,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   title = 'profile-info';
   dataSourseService: DataSourseService;
   contactPageData: ContactModel;
+  isAdmin: boolean;
   constructor(dataSourseService: DataSourseService){
     this.dataSourseService = dataSourseService;
   }
@@ -26,6 +27,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       });
   }
   ngOnInit(): void {
+    this.isAdmin = localStorage.getItem("isAdmin") && localStorage.getItem("isAdmin")=="true"?true:false;
+
     this.dataSourseService.getContactPageData().then(data => {
       data.contactTypes = data.contactTypes.filter(f =>f.isActive === true && f.type.toLowerCase()==='website');
       this.contactPageData = data;

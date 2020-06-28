@@ -8,6 +8,7 @@ import { DataSourseService } from '../domain/services/data-sourse.service';
 })
 export class AboutComponent implements OnInit {
   aboutPageData: AboutModel;
+  pageName = "about";
   isAdmin = true;
   DataSourseService: DataSourseService;
   constructor(dataSourseService: DataSourseService) {
@@ -20,8 +21,12 @@ export class AboutComponent implements OnInit {
       console.log(data);
     })
      //this.aboutPageData = JSON.parse(JSON.stringify(aboutData));
-     this.isAdmin = localStorage.getItem("isAdmin")?true:false;
-     
+     this.isAdmin = localStorage.getItem("isAdmin") && localStorage.getItem("isAdmin")=="true"?true:false;
+
+  }
+
+  onupdate(eventData: any){
+    this.aboutPageData = eventData;
   }
 
 }

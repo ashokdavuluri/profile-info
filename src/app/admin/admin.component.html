@@ -1,16 +1,22 @@
 <section class="fullwidth py-5">
     <div class="container">
- <form class="form-signin" [formGroup]="loginForm">
+ <form class="form-signin" [formGroup]="loginForm" >
     <img class="mb-4" src="../../assets/images/profile1.jpeg" alt="Avatar" style="width:200px;  border-radius: 50%;">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail" class="sr-only">User Name</label>
-    <input type="text" id="inputEmail" class="form-control" formControlName="userName" placeholder="User Name" required="Please enter user name" autofocus="">
-    <label for="inputPassword" class="sr-only">Pass Code</label>
-    <input type="password" id="inputPassword" class="form-control"  formControlName="passCode"placeholder="Pass Code" required="">
-    <button class="btn btn-lg btn-block" type="submit" (click)="submit()">Sign in</button>
-    <br/>
-    <p class="text-danger" *ngIf="invalidForm">Please fill all fields</p>
+    <h1 class="h3 mb-3 font-weight-normal">{{isAdmin?'Already logged in..!':'Please sign in'}}</h1>
+    <div *ngIf="!isAdmin">
+      <label for="inputEmail" class="sr-only">User Name</label>
+      <input type="text" id="inputEmail" class="form-control" formControlName="userName" placeholder="User Name" required="Please enter user name" autofocus="">
+      <label for="inputPassword" class="sr-only">Pass Code</label>
+      <input type="password" id="inputPassword" class="form-control"  formControlName="passCode"placeholder="Pass Code" required="">
+      <button class="btn btn-lg btn-block" type="submit" (click)="submit()">Sign in</button>
+      <br/>
+      <p class="text-danger" *ngIf="invalidForm">Please fill all fields</p>
+    </div>
+    <div>
+      <button *ngIf="isAdmin" class="btn" type="button" (click)="logOut()">Log out</button>
+    </div>
     <p class="mt-5 mb-3 text-muted">© 2019-2020</p>
   </form>
+  
   </div>
   </section>

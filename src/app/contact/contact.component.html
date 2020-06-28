@@ -27,4 +27,7 @@
           </form>
       </div> 
 </div>
+<div class="container">
+  <app-edit *ngIf="isAdmin" [pageType]="pageName" (onUpdate)=onupdate($event)></app-edit>
+</div>
 <br/>

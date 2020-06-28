@@ -14,6 +14,8 @@ import { BlogComponent } from './blog/blog.component';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { DownloadComponent } from './cv/download/download.component';
+import { EditComponent } from './edit/edit.component';
+import { NgJsonEditorModule } from 'ang-jsoneditor' ;
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { DownloadComponent } from './cv/download/download.component';
     AdminComponent,
     BlogComponent,
     SearchComponent,
-    DownloadComponent
+    DownloadComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { DownloadComponent } from './cv/download/download.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgJsonEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

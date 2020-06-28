@@ -21,7 +21,8 @@ export class BlogComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.isAdmin = localStorage.getItem("isAdmin")?true:false;
+    this.isAdmin = localStorage.getItem("isAdmin") && localStorage.getItem("isAdmin")=="true"?true:false;
+
   }
 
   onSubscribe(){

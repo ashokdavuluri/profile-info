@@ -1,4 +1,4 @@
-<br />
+<br /><br>
 <div class="container" *ngIf="aboutPageData">
     <div class="row">
         <div class="card col-sm">
@@ -14,3 +14,4 @@
     </div>
 </div>
 <br />
+<app-edit *ngIf="isAdmin" [pageType]="pageName" (onUpdate)=onupdate($event)></app-edit>
