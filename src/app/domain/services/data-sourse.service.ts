@@ -7,6 +7,7 @@ import { ProfileModel } from '../models/profile-model';
 import { ContactModel } from '../models/contact-model';
 import { ProjectModel } from '../models/projects-model';
 import { Observable } from 'rxjs';
+import { BlobInputModel, BlobBody } from '../models/blob-body-model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,20 @@ export class DataSourseService {
   constructor(httpClient: HttpClient) { 
     this.httpClient = httpClient;
     // this.blobContainerUrl = "https://"+environment.azureContainers.blobName+'.'+environment.azureContainers.baseUrl
+  }
+
+  updateBlob(blobInput: BlobInputModel){
+    var url = "https://profiles-fn-app.azurewebsites.net/api/UpdateBlobs";
+    return this.httpClient
+      .post<any>(url,blobInput)
+      .pipe(tap(
+          data => {
+            console.log(data);
+          },
+          error => {
+            console.log(error);
+          }
+        ));
   }
 
   getContactPageData():Promise<ContactModel>{
