@@ -1,9 +1,12 @@
-import { TechTag } from './common-model';
+import { TechTag, responsibility } from './common-model';
 
 export interface ProfileModel {
     profileName: string;
     summary: string;
+    isShowSummary:boolean;
+    responsibiltyTitle: string
     frameworks: Framework[];
+    responsibilties:responsibility[]
     numberOfProfileImages: number;
   }
   

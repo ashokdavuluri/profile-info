@@ -22,25 +22,22 @@
             </div>
             </div>
     </div>
-    <!-- <br/>
-    <div style="margin:25px;">
+    <div class="container" *ngIf="profileData.isShowSummary">
         <div class="row">
             <div class="card col-md">
                 <div class="card-body">
-                    <h5 class="card-title">Achievements/Chellenges</h5>
-                    <h6 class="card-subtitle mb-2 text-muted"></h6>
-                    <p class="card-text">jkgkkkkk</p>
-                    <p class="card-text">khklkkkkkkkk</p>
+                    <h5 class="card-title">{{profileData?.responsibiltyTitle}}</h5>
+                    <ul>
+                        <li *ngFor="let resp of profileData?.responsibilties">{{resp.data}}</li>
+                      </ul>
                 </div>
             </div>
-            </div>
-    </div> -->
+        </div>
+        <br>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <!-- <a href="#" target="_blank">
-                    Download PDF CV <i class="fa fa-lg fa-download"></i>
-                </a> -->
                 <app-download></app-download>
             </div>
         </div>

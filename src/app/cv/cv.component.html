@@ -18,21 +18,23 @@
         <div class="pb-2" *ngFor="let item of projectsData?.projects">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">{{item.name}} - {{item.role}}{{item.isLatest?'(Latest)':''}}</h5>
+      <h5 class="card-title">{{item.company}} - {{item.role}}{{item.isLatest?'(Latest)':''}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{item.dateFrom}} - {{item.dateTo}}</h6>
+      <h5 class="card-title">{{item.name}}</h5>
       <p class="card-text" *ngFor="let summary of item.summaries">{{summary.data}}</p>
-      <!-- <br/> -->
-      <!-- <h5 class="float-left">Roles & Responsibilities</h5> -->
-      <!-- <ul class="float-left">
-          <li>point a</li>
-          <li>point b</li>
-          <li>point c</li>
-      </ul>
-      <a class="float-right" href="#" >See more</a> -->
-      <br/>
-      <p>
-        <a *ngFor="let tag of item.techTags" href="https://www.google.com/search?q={{tag.url}}" target="_blank">#{{tag.name}}, </a>
-      </p>
+      <br>
+      <div>
+        <ul >
+          <li *ngFor="let resp of item?.responsibilties">{{resp.data}}</li>
+        </ul>
+      </div>
+      <br>
+      <div>
+        <p class="card-text"> 
+          <a *ngFor="let tag of item.techTags" href="https://www.google.com/search?q={{tag.url}}" target="_blank">#{{tag.name}}, </a>
+        </p>
+      </div>
+      
     </div>
   </div>
 </div>
