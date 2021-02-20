@@ -1,0 +1,35 @@
+// Content Page
+
+.content-page {
+	display: flex;
+	flex-direction: column;
+
+	.content-page-text {
+		text-align: left;
+
+		p {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+
+// ---- XSM - 576px and up
+@media (min-width: $screen-xsm-custom-min) {
+
+}
+
+// ---- SM - 768px and up ----
+@media (min-width: $screen-sm-custom-min) {
+
+}
+
+// ---- MD - 992px and up  ----
+@media (min-width: $screen-md-custom-min) {
+
+}
+
+// ---- LG - 1200px and up ----
+@media (min-width: $screen-lg-custom-min) {
+
+}

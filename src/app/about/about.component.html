@@ -1,0 +1,18 @@
+<br /><br>
+<div class="container" *ngIf="aboutPageData">
+    <div class="row">
+        <div class="card col-sm">
+            <div class="card-body">
+                <h4 class="card-title" contenteditable = "isAdmin">{{aboutPageData.pageTitle}}</h4>
+                <h5 class="card-title" contenteditable = "isAdmin">Version {{aboutPageData.version}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Technologies</h6>
+                <p class="card-text">
+                    <a *ngFor="let item of aboutPageData.technologies" [href]="item.url" target="_blank">#{{item.name}} </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<app-edit *ngIf="isAdmin" [pageType]="pageName" (onUpdate)=onupdate($event)></app-edit>
+<!-- <iframe width="1200" height="1000" src="https://app.powerbi.com/view?r=eyJrIjoiZWNjZjcxYmQtYzlkNS00MjA5LWFkNjYtNDhkYWZlMDQzZjliIiwidCI6ImE3YjkxODc1LWIzZWUtNGY5Yi1hYmQ3LWEyYTU2ZDZlOWYxYiJ9" frameborder="0" allowFullScreen="true"></iframe> -->

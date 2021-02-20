@@ -1,0 +1,94 @@
+// ----- Layout -----
+
+// Custom containers and columns
+
+.fullwidth, .w-100 {
+	width: 100%;
+	clear: both;
+}
+
+// Header
+
+.header {
+	background-color: $white;
+	border-bottom: 1px solid $color-keyline;
+}
+
+.logo {
+	width: 150px;
+}
+
+
+// Intro content
+
+.header-intro {
+	padding: 0;
+}
+
+// Tick List
+
+.tick-list {
+	text-align: left;
+}
+
+// Options
+
+.option-box {
+	border: 1px solid $color-light-keyline;
+}
+
+
+// Footer
+
+.footer {
+	background-color: $white;
+	color: $color-brand-light-grey;
+	border-top: 1px solid $color-light-keyline;
+	border-bottom: 1px solid $color-light-keyline;
+
+	.contact-details {
+		font-size: 0.9rem;
+		flex: 0 0 auto;
+	}
+
+	.icon-background {
+		color: rgba(255,255,255,0.1);
+	}
+
+	i {
+		color: $color-brand-light-grey;
+		font-size: 1.3rem;
+	}
+
+	.copyright-section {
+		border-top: 1px solid $color-light-keyline;
+		font-size: 0.8rem;
+	}
+
+}
+
+
+
+// ---- XSM - 576px and up
+@media (min-width: $screen-xsm-custom-min) {
+
+	.footer {
+		flex-direction: row;
+	}
+
+}
+
+// ---- SM - 768px and up ----
+@media (min-width: $screen-sm-custom-min) {
+
+}
+
+// ---- MD - 992px and up  ----
+@media (min-width: $screen-md-custom-min) {
+
+}
+
+// ---- LG - 1200px and up ----
+@media (min-width: $screen-lg-custom-min) {
+
+}
